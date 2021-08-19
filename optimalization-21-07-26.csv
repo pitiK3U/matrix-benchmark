@@ -1,0 +1,19 @@
+       lang-run/comp ,                   flags , time (ns)
+clang++-comptime.cpp ,                     -O2 ,     95
+clang++-comptime.cpp ,                     -O1 ,    108
+clang++-comptime.cpp ,                     -O3 ,    110
+    g++-comptime.cpp ,                     -O3 ,   1699
+    g++-comptime.cpp ,                     -O2 ,   1959
+    g++-comptime.cpp ,                     -O1 ,   2145
+ clang++-runtime.cpp ,                     -O2 ,   8897
+ clang++-runtime.cpp ,                     -O3 ,  10492
+     g++-runtime.cpp ,                     -O2 ,  11308
+     g++-runtime.cpp ,                     -O3 ,  12772
+     g++-runtime.cpp ,                     -O1 ,  14274
+ clang++-runtime.cpp ,                     -O1 , 189231
+    rustc-runtime.rs ,          -C opt-level=2 ,  18287
+    rustc-runtime.rs ,          -C opt-level=3 ,  19254
+    rustc-runtime.rs ,          -C opt-level=1 ,  20738
+   rustc-comptime.rs ,          -C opt-level=2 ,    104
+   rustc-comptime.rs ,          -C opt-level=3 ,    123
+   rustc-comptime.rs ,          -C opt-level=1 ,    130

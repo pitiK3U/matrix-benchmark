@@ -1,7 +1,7 @@
-clang++-runtime.cpp 2775
-g++-runtime.cpp 11851
-rustc-runtime-get-if-let.rs 12124
-rustc-runtime-get.rs 13764
-rustc-runtime.rs 14752
-clang-runtime.c 17312
-gcc-runtime.c 28513
+clang++-runtime.cpp 11305
+g++-runtime.cpp 11435
+rustc-runtime-get-if-let.rs 12984
+rustc-runtime.rs 14745
+rustc-runtime-get.rs 14949
+clang-runtime.c 16520
+gcc-runtime.c 23337

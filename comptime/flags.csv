@@ -1,22 +1,20 @@
-        lang-run/comp ,                   flags , time (ns)
- clang++-comptime.cpp ,                     -O2 ,     95
-    rustc-comptime.rs ,          -C opt-level=2 ,    104
- clang++-comptime.cpp ,                     -O1 ,    108
-    rustc-comptime.rs ,    -C target-cpu=native ,    109
- clang++-comptime.cpp ,                     -O3 ,    110
-    rustc-comptime.rs ,   -C target-cpu=generic ,    110
-    rustc-comptime.rs ,          -C opt-level=3 ,    123
-    rustc-comptime.rs ,          -C opt-level=1 ,    130
-    rustc-comptime.rs ,  -C target-feature=avx2 ,    150
-    rustc-comptime.rs ,                  -C lto ,    223
-     g++-comptime.cpp ,                  -mavx2 ,    356
-     g++-comptime.cpp ,                   -flto ,    405
-     g++-comptime.cpp ,           -march=native ,    504
-     g++-comptime.cpp ,           -mtune=native ,    560
- clang++-comptime.cpp ,           -march=native ,    918
- clang++-comptime.cpp ,                   -flto ,   1017
- clang++-comptime.cpp ,           -mtune=native ,   1064
- clang++-comptime.cpp ,                  -mavx2 ,   1114
-     g++-comptime.cpp ,                     -O3 ,   1699
-     g++-comptime.cpp ,                     -O2 ,   1959
-     g++-comptime.cpp ,                     -O1 ,   2145
+               lang-run/comp ,                                  flags , time (ns)
+        clang++-comptime.cpp ,                          -mtune=native ,    108
+        clang++-comptime.cpp ,  -ftree-vectorize -ftree-slp-vectorize ,    114
+        clang++-comptime.cpp ,                                        ,    116
+        clang++-comptime.cpp ,                          -march=native ,    116
+        clang++-comptime.cpp ,                                 -mavx2 ,    121
+        clang++-comptime.cpp ,                                  -flto ,    123
+           rustc-comptime.rs ,                   -C target-cpu=native ,    130
+           rustc-comptime.rs ,                                 -C lto ,    149
+           rustc-comptime.rs ,                                        ,    153
+           rustc-comptime.rs ,                  -C target-cpu=generic ,    158
+           rustc-comptime.rs ,                         -C panic=abort ,    162
+           rustc-comptime.rs ,                  -C target-cpu=haswell ,    168
+           rustc-comptime.rs ,                 -C target-feature=avx2 ,    183
+            g++-comptime.cpp ,                                 -mavx2 ,   2485
+            g++-comptime.cpp ,  -ftree-vectorize -ftree-slp-vectorize ,   2487
+            g++-comptime.cpp ,                                        ,   2688
+            g++-comptime.cpp ,                                  -flto ,   3009
+            g++-comptime.cpp ,                          -march=native ,   3300
+            g++-comptime.cpp ,                          -mtune=native ,   4071

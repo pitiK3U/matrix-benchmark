@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <iostream>
 #include <array>
 #include <chrono>
@@ -47,12 +48,12 @@ void print_matrix(Matrix<T, M, N> const matrix) {
 }
 
 int main() {
-	const Matrix<int, 50, 20> left  = make_matrix<int, 50, 20>(5);
-	const Matrix<int, 20, 15> right = make_matrix<int, 20, 15>(2);
+	const Matrix<int64_t, 50, 20> left  = make_matrix<int64_t, 50, 20>(5);
+	const Matrix<int64_t, 20, 15> right = make_matrix<int64_t, 20, 15>(2);
 
 	auto start = high_resolution_clock::now();
 
-	const Matrix<int, 50, 15> result = cross(left, right);
+	const Matrix<int64_t, 50, 15> result = cross(left, right);
 
 	auto stop = high_resolution_clock::now();
 

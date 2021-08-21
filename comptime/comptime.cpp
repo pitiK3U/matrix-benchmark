@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <iostream>
 #include <array>
 #include <chrono>
@@ -13,7 +14,7 @@ consteval const Matrix<T, M, N> cross(const Matrix<T, M, K> &lhs, const Matrix<T
 
 	for (size_t row = 0; row < M; ++row) {
 		for (size_t col = 0; col < N; ++col) {
-			int sum = 0;
+			int64_t sum = 0;
 			for (size_t j = 0; j < K; ++j) {
 				sum += lhs[row][j] * rhs[j][col];
 			}
@@ -37,7 +38,7 @@ consteval Matrix<T, M, N> make_matrix(const T &value) {
 }
 
 template<class T, size_t M, size_t N>
-void print_matrix(Matrix<T, M, N> const matrix) {
+void print64_t_matrix(Matrix<T, M, N> const matrix) {
 	for (auto &row : matrix) {
 		for (auto item : row) {
 			std::cout << item << " ";
@@ -47,16 +48,16 @@ void print_matrix(Matrix<T, M, N> const matrix) {
 }
 
 int main() {
-	constexpr const Matrix<int, 50, 20> left  = make_matrix<int, 50, 20>(5);
-	constexpr const Matrix<int, 20, 15> right = make_matrix<int, 20, 15>(2);
+	constexpr const Matrix<int64_t, 50, 20> left  = make_matrix<int64_t, 50, 20>(5);
+	constexpr const Matrix<int64_t, 20, 15> right = make_matrix<int64_t, 20, 15>(2);
 
 	auto start = high_resolution_clock::now();
 
-	constexpr const Matrix<int, 50, 15> result = cross(left, right);
+	constexpr const Matrix<int64_t, 50, 15> result = cross(left, right);
 
 	auto stop = high_resolution_clock::now();
 
-	print_matrix(result);
+	print64_t_matrix(result);
 
 	auto duration = duration_cast<nanoseconds>(stop - start);
 	std::cout << duration.count() << " ns" << std::endl;

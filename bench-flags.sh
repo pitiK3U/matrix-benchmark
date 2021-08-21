@@ -2,6 +2,7 @@
 
 data=flags.csv
 bin=./a.out
+COUNT=100
 
 if [ -e $data ]; then rm $data; fi
 
@@ -15,12 +16,12 @@ do
 	do
 		zig build-exe $flag -femit-bin=$bin $file
 		sum=0
-		for _ in $(seq 1 10)
+		for _ in $(seq 1 $COUNT)
 		do
 			time=$($bin 2>&1 | tail -n 1 | cut -f1 -d' ')
 			sum=$((sum + time))
 		done
-		printf "%28s , %38s , %6d\n" "zig-$file" "$flag" "$((sum/10))" >> $data
+		printf "%28s , %38s , %6d\n" "zig-$file" "$flag" "$((sum/$COUNT))" >> $data
 	done
 done
 
@@ -31,21 +32,21 @@ do
 	do
 		g++ -O2 -std=c++20 $flag "$file" -o $bin
 		sum=0
-		for _ in $(seq 1 10)
+		for _ in $(seq 1 $COUNT)
 		do
 			time=$($bin | tail -n 1 | cut -f1 -d' ')
 			sum=$((sum + time))
 		done
-		printf "%28s , %38s , %6d\n" "g++-$file" "$flag" "$((sum/10))" >> $data
+		printf "%28s , %38s , %6d\n" "g++-$file" "$flag" "$((sum/$COUNT))" >> $data
 
 		clang++ -O2 -std=c++20 $flag $file -o $bin
 		sum=0
-		for _ in $(seq 1 10)
+		for _ in $(seq 1 $COUNT)
 		do
 			time=$($bin | tail -n 1 | cut -f1 -d' ')
 			sum=$((sum + time))
 		done
-		printf "%28s , %38s , %6d\n" "clang++-$file" "$flag" "$((sum/10))" >> $data
+		printf "%28s , %38s , %6d\n" "clang++-$file" "$flag" "$((sum/$COUNT))" >> $data
 	done
 done
 
@@ -56,12 +57,12 @@ do
 	do
 		rustc -O $flag -o $bin $file
 		sum=0
-		for _ in $(seq 1 10)
+		for _ in $(seq 1 $COUNT)
 		do
 			time=$($bin | tail -n 1 | cut -f1 -d' ')
 			sum=$((sum + time))
 		done
-		printf "%28s , %38s , %6d\n" "rustc-$file" "$flag" "$((sum/10))" >> $data
+		printf "%28s , %38s , %6d\n" "rustc-$file" "$flag" "$((sum/$COUNT))" >> $data
 	done
 done
 

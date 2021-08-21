@@ -1,37 +1,37 @@
                lang-run/comp ,                                  flags , time (ns)
-         clang++-runtime.cpp ,                                        ,   8324
-         clang++-runtime.cpp ,                                  -flto ,   8552
-         clang++-runtime.cpp ,                          -mtune=native ,   8662
-            rustc-runtime.rs ,                   -C target-cpu=native ,   9921
-         clang++-runtime.cpp ,                          -march=native ,  10336
-         clang++-runtime.cpp ,  -ftree-vectorize -ftree-slp-vectorize ,  10986
-        rustc-runtime-get.rs ,                  -C target-cpu=generic ,  11525
-         clang++-runtime.cpp ,                                 -mavx2 ,  11785
-             g++-runtime.cpp ,                                  -flto ,  11789
-             g++-runtime.cpp ,                                        ,  13006
-             g++-runtime.cpp ,                                 -mavx2 ,  13439
- rustc-runtime-get-if-let.rs ,                                        ,  14398
-            rustc-runtime.rs ,                  -C target-cpu=generic ,  14972
-             g++-runtime.cpp ,  -ftree-vectorize -ftree-slp-vectorize ,  15077
-             zig-runtime.zig ,                         -O ReleaseFast ,  15369
-             g++-runtime.cpp ,                          -march=native ,  15612
-             g++-runtime.cpp ,                          -mtune=native ,  15648
- rustc-runtime-get-if-let.rs ,                                 -C lto ,  16165
-            rustc-runtime.rs ,                  -C target-cpu=haswell ,  16170
-             zig-runtime.zig ,                         -O ReleaseSafe ,  16481
-        rustc-runtime-get.rs ,                 -C target-feature=avx2 ,  17330
- rustc-runtime-get-if-let.rs ,                   -C target-cpu=native ,  17865
-        rustc-runtime-get.rs ,                                        ,  17945
-            rustc-runtime.rs ,                 -C target-feature=avx2 ,  18381
-        rustc-runtime-get.rs ,                                 -C lto ,  18677
- rustc-runtime-get-if-let.rs ,                 -C target-feature=avx2 ,  18744
-        rustc-runtime-get.rs ,                         -C panic=abort ,  19021
- rustc-runtime-get-if-let.rs ,                  -C target-cpu=generic ,  19720
-            rustc-runtime.rs ,                                        ,  19951
-            rustc-runtime.rs ,                         -C panic=abort ,  20660
- rustc-runtime-get-if-let.rs ,                         -C panic=abort ,  22886
-        rustc-runtime-get.rs ,                   -C target-cpu=native ,  23029
- rustc-runtime-get-if-let.rs ,                  -C target-cpu=haswell ,  23494
-        rustc-runtime-get.rs ,                  -C target-cpu=haswell ,  25258
-            rustc-runtime.rs ,                                 -C lto ,  25300
-             zig-runtime.zig ,                        -O ReleaseSmall ,  28987
+         clang++-runtime.cpp ,                                  -flto ,   6881
+         clang++-runtime.cpp ,                                        ,   8110
+         clang++-runtime.cpp ,                          -mtune=native ,   8137
+         clang++-runtime.cpp ,  -ftree-vectorize -ftree-slp-vectorize ,   8300
+         clang++-runtime.cpp ,                          -march=native ,  10672
+             g++-runtime.cpp ,                                  -flto ,  11046
+             g++-runtime.cpp ,  -ftree-vectorize -ftree-slp-vectorize ,  11211
+         clang++-runtime.cpp ,                                 -mavx2 ,  11237
+             g++-runtime.cpp ,                                 -mavx2 ,  12080
+             g++-runtime.cpp ,                          -mtune=native ,  12362
+             g++-runtime.cpp ,                                        ,  12514
+             g++-runtime.cpp ,                          -march=native ,  12704
+ rustc-runtime-get-if-let.rs ,                 -C target-feature=avx2 ,  13126
+            rustc-runtime.rs ,                                        ,  13403
+ rustc-runtime-get-if-let.rs ,                         -C panic=abort ,  13608
+            rustc-runtime.rs ,                  -C target-cpu=haswell ,  13646
+            rustc-runtime.rs ,                   -C target-cpu=native ,  13812
+             zig-runtime.zig ,                         -O ReleaseFast ,  13948
+ rustc-runtime-get-if-let.rs ,                  -C target-cpu=generic ,  14078
+            rustc-runtime.rs ,                         -C panic=abort ,  14123
+        rustc-runtime-get.rs ,                                        ,  14207
+            rustc-runtime.rs ,                  -C target-cpu=generic ,  14431
+ rustc-runtime-get-if-let.rs ,                                        ,  14447
+        rustc-runtime-get.rs ,                         -C panic=abort ,  14662
+ rustc-runtime-get-if-let.rs ,                                 -C lto ,  14763
+            rustc-runtime.rs ,                 -C target-feature=avx2 ,  14769
+        rustc-runtime-get.rs ,                  -C target-cpu=generic ,  14922
+        rustc-runtime-get.rs ,                                 -C lto ,  15028
+        rustc-runtime-get.rs ,                 -C target-feature=avx2 ,  15136
+             zig-runtime.zig ,                         -O ReleaseSafe ,  15248
+ rustc-runtime-get-if-let.rs ,                   -C target-cpu=native ,  17936
+        rustc-runtime-get.rs ,                  -C target-cpu=haswell ,  18840
+ rustc-runtime-get-if-let.rs ,                  -C target-cpu=haswell ,  19110
+        rustc-runtime-get.rs ,                   -C target-cpu=native ,  20004
+            rustc-runtime.rs ,                                 -C lto ,  20117
+             zig-runtime.zig ,                        -O ReleaseSmall ,  28961

@@ -8,6 +8,22 @@ if [ -e $data ]; then rm $data; fi
 touch $data
 printf "%28s , %38s , %6s\n" "lang-run/comp" "flags" "time (ns)" >> $data
 
+for file in *.zig
+do
+	flags=("-O ReleaseSafe" "-O ReleaseFast" "-O ReleaseSmall")
+	for flag in "${flags[@]}"
+	do
+		zig build-exe $flag -femit-bin=$bin $file
+		sum=0
+		for _ in $(seq 1 10)
+		do
+			time=$($bin 2>&1 | tail -n 1 | cut -f1 -d' ')
+			sum=$((sum + time))
+		done
+		printf "%28s , %38s , %6d\n" "zig-$file" "$flag" "$((sum/10))" >> $data
+	done
+done
+
 for file in *.cpp
 do
 	flags=("" "-mtune=native" "-march=native" "-flto" "-mavx2" "-ftree-vectorize -ftree-slp-vectorize")
@@ -45,7 +61,6 @@ do
 			time=$($bin | tail -n 1 | cut -f1 -d' ')
 			sum=$((sum + time))
 		done
-		time=$($bin | tail -n 1 | cut -f1 -d' ')
 		printf "%28s , %38s , %6d\n" "rustc-$file" "$flag" "$((sum/10))" >> $data
 	done
 done

@@ -1,0 +1,23 @@
+               lang-run/comp ,                                  flags , time (ns)
+                   g++-*.cpp ,                                        ,      0
+               clang++-*.cpp ,                                        ,      0
+                   g++-*.cpp ,                          -mtune=native ,      0
+               clang++-*.cpp ,                          -mtune=native ,      0
+                   g++-*.cpp ,                          -march=native ,      0
+               clang++-*.cpp ,                          -march=native ,      0
+                   g++-*.cpp ,                                  -flto ,      0
+               clang++-*.cpp ,                                  -flto ,      0
+                   g++-*.cpp ,                                 -mavx2 ,      0
+               clang++-*.cpp ,                                 -mavx2 ,      0
+                   g++-*.cpp ,  -ftree-vectorize -ftree-slp-vectorize ,      0
+               clang++-*.cpp ,  -ftree-vectorize -ftree-slp-vectorize ,      0
+                  rustc-*.rs ,                                        ,      0
+                  rustc-*.rs ,                   -C target-cpu=native ,      0
+                  rustc-*.rs ,                                 -C lto ,      0
+                  rustc-*.rs ,                  -C target-cpu=generic ,      0
+                  rustc-*.rs ,                 -C target-feature=avx2 ,      0
+                  rustc-*.rs ,                         -C panic=abort ,      0
+                  rustc-*.rs ,                  -C target-cpu=haswell ,      0
+                   zig-*.zig ,                                        ,      0
+                   zig-*.zig ,                         -O ReleaseSafe ,      0
+                   zig-*.zig ,                         -O ReleaseFast ,      0

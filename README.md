@@ -11,10 +11,10 @@
 - C (gcc, clang)
 
 ## Compile time
-![flags.svg](./comptime/flags.svg)
+![flags.png](./comptime/flags.png)
 
 
 ## Runtime
-![benchmark.svg](./runtime/bench.svg)
+![benchmark.png](./runtime/bench.png)
 
-![flags.svg](./runtime/flags.svg)
+![flags.png](./runtime/flags.png)
